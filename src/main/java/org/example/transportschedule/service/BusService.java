@@ -17,7 +17,7 @@ public class BusService {
         Bus entity = busMapper.toEntity(busDto);
         return busRepository.save(entity);
     }
-
+//
     public Bus findById(Long id) {
         return busRepository.findById(id).orElse(null);
     }
