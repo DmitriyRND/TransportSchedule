@@ -5,18 +5,19 @@ import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 import java.time.LocalDate;
-@Data
-public class BusDto {
-    @NotBlank(message = "departureCity is null")
-    private String departureCity;
+import java.time.LocalDateTime;
 
-    @NotBlank(message = "arrivalCity is null")
-    private String arrivalCity;
 
-    private LocalDate departureTime;
+public record BusDto(
+        @NotBlank(message = "departureCity is null")
+        String departureCity,
+        @NotBlank(message = "arrivalCity is null")
+        String arrivalCity,
+        LocalDateTime departureTime,
+        LocalDateTime arrivalTime,
+        @NotBlank(message = "price is null")
+        @Positive(message = "price must be a positive number.")
+        Double price
+) {
 
-    private LocalDate arrivalTime;
-    @NotBlank(message = "price is null")
-    @Positive(message = "price must be a positive number.")
-    private double price;
 }

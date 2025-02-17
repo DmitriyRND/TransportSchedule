@@ -9,4 +9,5 @@ import org.mapstruct.Mapper;
 public interface BusMapper {
 
     Bus toEntity(BusDto busDto);
+    BusDto toDto(Bus bus);
 }
